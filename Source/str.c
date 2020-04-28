@@ -31,12 +31,11 @@ int main (int argc, char * argv[])
 int strCompare(char str[], char word[], int index)
 {
 	int i,j;
-
 	for (i = index, j = 0; word[j] != '\0'; i++, j++)
 	{
 		if (str[i] != word[j])
 			return 0;
-	}	
+	}
 	return 1;
 }
 //Compare the end of the first string with the second string

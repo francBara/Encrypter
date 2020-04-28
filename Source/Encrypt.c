@@ -14,22 +14,20 @@ int main (int argc, char * argv[])
 	char * commands[3] = {NULL, "F", NULL};
 
 	Commands(commands, argv, argc);
-
 	if (argc == 1)
 		printf("Encrypter, type 'help'\n");
 
-	else if (strCompare(commands[1], "T", 0))
-	{
+	else if (commands[1][0] == 'T' && commands[0])
 		printf("%s\n", Decrypt(commands[0]));
-	}
-	else if (strCompare(commands[0], "help", 0))
+	
+	else if (commands[0] && strCompare(commands[0], "help", 0))
 	{
 		printf("Encrypt <STRING>\n");
 		printf("OPTIONS:\n");
 		printf("-d | Decrypt\n");
 		printf("Use 'Encrypt (-d) <STRING> > FILENAME' to print output to file\n ");
 	}
-	else
+	else if (commands[0])
 	{
 		printf("%s\n", Encrypt(commands[0]));
 	}
