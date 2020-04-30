@@ -1,5 +1,3 @@
-#include <stdlib.h>
-
 typedef struct list_P
 {
 	char c;
@@ -390,7 +388,7 @@ int str_to_int(char val[])
 
 	return tmp;
 }
-/*ALLOCATES EMPTY SPACE n TIMES, APPENDS IF ALREADY ALLOCATED*/
+/*ALLOCATES EMPTY SPACE, APPENDS IF ALREADY ALLOCATED*/
 str_list * strl_alloc(str_list * head)
 {
 	str_list * tmp;
@@ -418,6 +416,7 @@ str_list * strl_alloc(str_list * head)
 		printf("ALLOCATION ERROR\n");
 	return head;
 }
+
 /*FREES A LIST OF DYNAMIC STRINGS AND STRINGS THEMSELVES*/
 void strl_free(str_list * head, int freeStrings)
 {
